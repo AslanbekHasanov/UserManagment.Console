@@ -7,12 +7,15 @@ namespace UserManagment.Console.Brokers.Loggings
         public void LogInformation(string message)=>
             System.Console.WriteLine(message);
 
-        public void LogError(string userMessage)=>
+        public void LogError(string userMessage)
+        {
+            System.Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine(userMessage);
+        }
 
         public void LogError(Exception exaption)
         {
-            System.Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.ForegroundColor = ConsoleColor.DarkRed;
             System.Console.WriteLine(exaption.Message);
         }
     }

@@ -38,6 +38,25 @@ namespace UserManagment.Console.Brokers.Storages
             return user;
         }
 
+        public bool LogIn(User user)
+        {
+            string[] userLines = File.ReadAllLines(FilePath);
+
+            for (int itaration = 0; itaration < userLines.Length; itaration++)
+            {
+                string userLine = userLines[itaration];
+                string[] userInfo = userLine.Split('|');
+
+                if (userInfo[0].Contains(user.Name)
+                    && userInfo[1].Contains(user.Password))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void EnsureFileExists()
         {
             bool fileExists = File.Exists(FilePath);

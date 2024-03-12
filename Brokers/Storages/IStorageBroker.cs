@@ -10,5 +10,6 @@ namespace UserManagment.Console.Brokers.Storages
     internal interface IStorageBroker
     {
         User AddUser(User user);
+        bool LogIn(User user);
     }
 }

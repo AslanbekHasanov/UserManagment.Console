@@ -2,8 +2,9 @@
 
 namespace UserManagment.Console.Services
 {
-    internal interface ILoginService
+    internal interface ILogInService
     {
         User AddUserInformation(User user);
+        bool LogInCheck(User user);
     }
 }

@@ -11,12 +11,14 @@ namespace UserManagment.Console.Brokers.Loggings
         {
             System.Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine(userMessage);
+            System.Console.ForegroundColor = ConsoleColor.White;
         }
 
         public void LogError(Exception exaption)
         {
             System.Console.ForegroundColor = ConsoleColor.DarkRed;
             System.Console.WriteLine(exaption.Message);
+            System.Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

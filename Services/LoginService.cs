@@ -63,6 +63,7 @@ namespace UserManagment.Console.Services
             else
             {
                 bool isThereUser = this.storageBroker.LogIn(user);
+
                 if (isThereUser is false)
                 {
                     this.loggingBroker.LogInformation("User Not Found!");
@@ -70,8 +71,9 @@ namespace UserManagment.Console.Services
                 else
                 {
                     this.loggingBroker.LogInformation("Welcome!");
-                    return isThereUser;
                 }
+
+                return isThereUser;
             }
         }
 
